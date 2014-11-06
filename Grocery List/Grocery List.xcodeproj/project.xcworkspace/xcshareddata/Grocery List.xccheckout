@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8846EFAF-4C43-4658-8120-2AAD869B0519</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Grocery List</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>29314DF492CA4CD2E8B284A0274D311FDEF336D5</key>
+		<string>https://github.com/hartungm/HW06_CIS380.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Grocery List/Grocery List.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>29314DF492CA4CD2E8B284A0274D311FDEF336D5</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hartungm/HW06_CIS380.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>29314DF492CA4CD2E8B284A0274D311FDEF336D5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>29314DF492CA4CD2E8B284A0274D311FDEF336D5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HW06_CIS380</string>
+		</dict>
+	</array>
+</dict>
+</plist>
