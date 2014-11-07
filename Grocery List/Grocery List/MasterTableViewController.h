@@ -10,5 +10,5 @@
 #import <Parse/Parse.h>
 
 @interface MasterTableViewController : PFQueryTableViewController
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 @end
