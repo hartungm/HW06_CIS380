@@ -31,6 +31,12 @@
 	return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	[self loadObjects];
+}
+
 -(PFQuery *)queryForTable
 {
 	PFQuery *query = [PFQuery queryWithClassName:@"ShoppingList"];
@@ -54,7 +60,40 @@
 	{
 		[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
 	}
+	else
+	{
+		[cell setAccessoryType:UITableViewCellAccessoryNone];
+	}
 	return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	[super tableView:tableView didSelectRowAtIndexPath:indexPath];
+	PFObject *object = [self objectAtIndexPath:indexPath];
+	if([object[@"status"] isEqual: @NO])
+	{
+		object[@"status"] = @YES;
+	}
+	else
+	{
+		object[@"status"] = @NO;
+	}
+	[object saveInBackground];
+	[self loadObjects];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+	// Return NO if you do not want the specified item to be editable.
+	return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (editingStyle == UITableViewCellEditingStyleDelete) {
+		PFObject *object = [self objectAtIndexPath:indexPath];
+		[object deleteInBackground];
+		[self loadObjects];
+	}
 }
 
 @end

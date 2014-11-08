@@ -16,26 +16,16 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem {
-	if (_detailItem != newDetailItem) {
-	    _detailItem = newDetailItem;
-	        
-	    // Update the view.
-	    [self configureView];
-	}
-}
-
-- (void)configureView {
-	// Update the user interface for the detail item.
-	if (self.detailItem) {
-	    self.detailDescriptionLabel.text = [self.detailItem description];
-	}
-}
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-	[self configureView];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+	[self.groceryTextField resignFirstResponder];
+	return YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,4 +33,19 @@
 	// Dispose of any resources that can be recreated.
 }
 
+- (IBAction)saveButtonPressed:(UIBarButtonItem *)sender {
+	PFObject *newItem = [PFObject objectWithClassName:@"ShoppingList"];
+	newItem[@"item"] = self.groceryTextField.text;
+	newItem[@"status"] = @NO;
+	[newItem saveInBackground];
+	[self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)canelButtonPressed:(UIBarButtonItem *)sender
+{
+	[self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)cancelButtonPressed:(id)sender {
+}
 @end
