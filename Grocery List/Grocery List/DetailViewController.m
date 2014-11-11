@@ -46,6 +46,4 @@
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)cancelButtonPressed:(id)sender {
-}
 @end
